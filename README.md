@@ -33,6 +33,9 @@ Incident records are stored in a local text file so that data remains available 
 
 ```text
 CodeAlpha_GradleProject/
+├── .github/
+│   └── workflows/
+│       └── gradle.yml
 ├── app/
 │   ├── src/
 │   │   ├── main/java/org/example/
@@ -43,6 +46,7 @@ CodeAlpha_GradleProject/
 ├── gradle/
 ├── gradlew
 ├── gradlew.bat
+├── settings.gradle.kts
 └── README.md
 ```
 
@@ -56,13 +60,13 @@ git clone https://github.com/Omkarpatil7409/CodeAlpha_GradleProject.git
 
 ### 2. Open the project directory
 
-```bash
+```powershell
 cd CodeAlpha_GradleProject
 ```
 
 ### 3. Run the application
 
-On Windows:
+On Windows PowerShell:
 
 ```powershell
 .\gradlew.bat :app:run
@@ -96,6 +100,10 @@ On Windows:
 ## CI/CD Integration
 
 This project uses GitHub Actions to automatically build and test the application whenever changes are pushed to the main branch or a pull request is created.
+
+## Data Storage
+
+Incident records are saved in a local file named `incidents.txt`. The application loads previously saved incidents when it starts.
 
 ## Internship Project
 
