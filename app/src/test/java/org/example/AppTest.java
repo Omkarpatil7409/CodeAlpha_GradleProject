@@ -1,4 +1,3 @@
-
 package org.example;
 
 import org.junit.jupiter.api.Test;
@@ -7,46 +6,41 @@ import static org.junit.jupiter.api.Assertions.*;
 class AppTest {
 
     @Test
-    void shouldStoreStudentDetails() {
-        App student = new App("Rahul", 101, 85);
-
-        assertEquals("Rahul", student.getStudentName());
-        assertEquals(101, student.getRollNumber());
-        assertEquals(85, student.getMarks());
+    void validSeverityShouldBeAccepted() {
+        assertTrue(App.isValidSeverity("Low"));
+        assertTrue(App.isValidSeverity("Medium"));
+        assertTrue(App.isValidSeverity("High"));
+        assertTrue(App.isValidSeverity("Critical"));
     }
 
     @Test
-    void shouldCalculateGradeAPlus() {
-        App student = new App("Rahul", 101, 95);
-
-        assertEquals("A+", student.calculateGrade());
+    void invalidSeverityShouldBeRejected() {
+        assertFalse(App.isValidSeverity("Urgent"));
+        assertFalse(App.isValidSeverity(""));
     }
 
     @Test
-    void shouldCalculateGradeA() {
-        App student = new App("Rahul", 101, 85);
-
-        assertEquals("A", student.calculateGrade());
+    void severityShouldIgnoreLetterCase() {
+        assertTrue(App.isValidSeverity("high"));
+        assertTrue(App.isValidSeverity("CRITICAL"));
     }
 
     @Test
-    void shouldCalculateGradeB() {
-        App student = new App("Rahul", 101, 75);
-
-        assertEquals("B", student.calculateGrade());
+    void validStatusShouldBeAccepted() {
+        assertTrue(App.isValidStatus("Open"));
+        assertTrue(App.isValidStatus("In Progress"));
+        assertTrue(App.isValidStatus("Resolved"));
     }
 
     @Test
-    void shouldCalculateGradeC() {
-        App student = new App("Rahul", 101, 65);
-
-        assertEquals("C", student.calculateGrade());
+    void invalidStatusShouldBeRejected() {
+        assertFalse(App.isValidStatus("Pending"));
+        assertFalse(App.isValidStatus(""));
     }
 
     @Test
-    void shouldCalculateFailGrade() {
-        App student = new App("Rahul", 101, 40);
-
-        assertEquals("Fail", student.calculateGrade());
+    void statusShouldIgnoreLetterCase() {
+        assertTrue(App.isValidStatus("open"));
+        assertTrue(App.isValidStatus("IN PROGRESS"));
     }
 }
