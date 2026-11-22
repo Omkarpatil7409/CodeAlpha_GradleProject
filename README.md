@@ -1,172 +1,108 @@
-\# Student Management System
 
+# DevOps Incident Tracker
 
+A Java-based console application that helps users report, track, search, and manage DevOps incidents.
 
-\## Project Overview
+## Project Overview
 
-The Student Management System is a Java application developed using Gradle. It stores student information, displays student details, and calculates grades based on marks.
+The DevOps Incident Tracker is developed using Java 21 and Gradle. It provides a simple way to record incidents, monitor their severity, and update their status.
 
+Incident records are stored in a local text file so that data remains available after restarting the application.
 
+## Features
 
-\## Technologies Used
+- Report new incidents
+- View all reported incidents
+- Search incidents by ID
+- Update incident status
+- Assign incident severity
+- Validate severity and status inputs
+- Automatically generate incident IDs
+- Save and load incident records
+- Automated testing using JUnit 5
 
-\- Java 21
+## Technologies Used
 
-\- Gradle 9.9.2
+- Java 21
+- Gradle 9.9.2
+- JUnit 5
+- Git and GitHub
+- GitHub Actions
 
-\- JUnit Jupiter
-
-\- IntelliJ-independent command-line build using Gradle
-
-
-
-\## Features
-
-\- Store student name, roll number, and marks.
-
-\- Display student details.
-
-\- Calculate grades automatically.
-
-\- Automated unit testing using JUnit Jupiter.
-
-
-
-\## Grade Criteria
-
-
-
-| Marks | Grade |
-
-|---|---|
-
-| 90–100 | A+ |
-
-| 80–89 | A |
-
-| 70–79 | B |
-
-| 60–69 | C |
-
-| Below 60 | Fail |
-
-
-
-\## Project Structure
-
-
+## Project Structure
 
 ```text
-
-CodeAlpha\_GradleProject/
-
+CodeAlpha_GradleProject/
 ├── app/
-
 │   ├── src/
-
-│   │   ├── main/java/org/example/App.java
-
-│   │   └── test/java/org/example/AppTest.java
-
+│   │   ├── main/java/org/example/
+│   │   │   └── App.java
+│   │   └── test/java/org/example/
+│   │       └── AppTest.java
 │   └── build.gradle.kts
-
 ├── gradle/
-
 ├── gradlew
-
 ├── gradlew.bat
-
-└── settings.gradle.kts
-
+└── README.md
 ```
 
+## How to Run
 
-
-\## How to Run
-
-
-
-Make sure Java 21 is installed.
-
-
-
-Build the project:
-
-
+### 1. Clone the repository
 
 ```bash
-
-gradle build
-
+git clone https://github.com/Omkarpatil7409/CodeAlpha_GradleProject.git
 ```
 
-
-
-Run the application:
-
-
+### 2. Open the project directory
 
 ```bash
-
-gradle run
-
+cd CodeAlpha_GradleProject
 ```
 
+### 3. Run the application
 
+On Windows:
 
-Run automated tests:
-
-
-
-```bash
-
-gradle test
-
+```powershell
+.\gradlew.bat :app:run
 ```
 
+### 4. Run automated tests
 
-
-\## Sample Output
-
-
-
-```text
-
-===== STUDENT MANAGEMENT SYSTEM =====
-
-Student Name : Rahul
-
-Roll Number  : 101
-
-Marks        : 85
-
-Grade        : A
-
-====================================
-
+```powershell
+.\gradlew.bat test
 ```
 
+### 5. Build the project
 
+```powershell
+.\gradlew.bat build
+```
 
-\## Testing
+## Incident Severity Levels
 
-The project includes six automated JUnit Jupiter tests covering student details and grade calculations.
+- Low
+- Medium
+- High
+- Critical
 
+## Incident Status
 
+- Open
+- In Progress
+- Resolved
 
-\## Internship
+## CI/CD Integration
+
+This project uses GitHub Actions to automatically build and test the application whenever changes are pushed to the main branch or a pull request is created.
+
+## Internship Project
 
 Developed as part of the CodeAlpha DevOps Internship.
 
-
-
-\## Author
+## Author
 
 Omkar
 
-
-
-\## License
-
-This project is created for educational and internship purposes.
-
+GitHub: https://github.com/Omkarpatil7409
